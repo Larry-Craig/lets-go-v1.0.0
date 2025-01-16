@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Go!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        
+        #pickup-dropoff {
+            display: flex;
+            gap: 10px;
+            /* Space between elements */
+            margin-bottom: 10px;
+            /* Space below the input fields */
+        }
+        
+        input {
+            padding: 10px;
+            font-size: 16px;
+            flex: 1;
+            /* Makes inputs take equal space */
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to Let's Go!</h1>
+    <div id="pickup-dropoff">
+        <input type="text" placeholder="Pickup Location" id="pickup">
+        <input type="text" placeholder="Dropoff Location" id="dropoff">
+    </div>
+    <button id="book-ride">Book Ride</button>
+    <script src="script.js"></script>
+</body>
+
+</html>
