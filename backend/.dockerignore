@@ -1,0 +1,21 @@
+# Node modules directory
+node_modules
+
+# Logs
+npm-debug.log
+yarn-error.log
+
+# Environment variable files
+.env
+
+# Dockerfile and .dockerignore itself (optional)
+Dockerfile
+.dockerignore
+
+# Build outputs (if any)
+dist
+build
+
+# Temporary files
+*.tmp
+*.temp
