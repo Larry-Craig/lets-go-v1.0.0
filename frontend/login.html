@@ -75,7 +75,8 @@
 
     <script>
         document.getElementById('loginForm').addEventListener('submit', async(e) => {
-            e.preventDefault();
+            e.preventDefault(); // Prevent the default form submission
+
             const response = await fetch('http://localhost:5000/api/auth/login', {
                 method: 'POST',
                 headers: {
@@ -86,7 +87,9 @@
                     password: document.getElementById('loginPassword').value
                 })
             });
-            const data = await response.json();
+
+            const data = await response.json(); // Parse the JSON response
+
             if (response.ok) {
                 alert('Login successful! Token: ' + data.token);
                 // Optionally redirect to another page after login

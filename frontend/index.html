@@ -92,26 +92,40 @@
     </form>
 
     <script>
-        document.getElementById('signupForm').addEventListener('submit', async(e) => {
-            e.preventDefault();
-            const response = await fetch('http://localhost:5000/api/auth/signup', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    name: document.getElementById('name').value,
-                    age: document.getElementById('age').value,
-                    dob: document.getElementById('dob').value,
-                    email: document.getElementById('email').value,
-                    phone: document.getElementById('phone').value,
-                    location: document.getElementById('location').value,
-                    username: document.getElementById('username').value,
-                    password: document.getElementById('password').value
-                })
-            });
-            const data = await response.text();
-            alert(data);
+        document.getElementById('signupForm').addEventListener('submit', async(event) => {
+            event.preventDefault(); // Prevent the default form submission
+
+            const formData = {
+                name: document.getElementById('name').value,
+                age: document.getElementById('age').value,
+                dob: document.getElementById('dob').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                location: document.getElementById('location').value,
+                username: document.getElementById('username').value,
+                password: document.getElementById('password').value
+            };
+
+            try {
+                const response = await fetch('http://localhost:5000/api/auth/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const data = await response.json(); // Change to .json() if your server returns JSON
+                console.log(data); // Handle success response
+                alert('Signup successful!'); // Notify user of success
+            } catch (error) {
+                console.error('There was a problem with the fetch operation:', error);
+                alert('Signup failed. Please try again.'); // Notify user of failure
+            }
         });
     </script>
 </body>
