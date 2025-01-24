@@ -1,28 +1,14 @@
 {
-    "name": "lets-go-app",
+    "name": "frontend",
     "version": "1.0.0",
-    "description": "A web application for booking rides. MySQL version: 5.7.24",
-    "main": "server.js",
+    "description": "Frontend for the Let's Go App.",
     "scripts": {
-        "start": "node backend/server.js",
-        "dev": "nodemon backend/server.js",
-        "test": "jest"
+        "start": "parcel index.html --port 3000",
+        "build": "parcel build index.html"
     },
-    "dependencies": {
-        "bcryptjs": "^2.4.3",
-        "body-parser": "^1.20.3",
-        "connect-session-sequelize": "^6.1.0",
-        "express": "^4.21.2",
-        "express-session": "^1.17.1",
-        "mysql": "^2.18.1",
-        "mysql2": "^3.12.0",
-        "nodemailer": "^6.9.16",
-        "sequelize": "^6.6.2"
-    },
+    "dependencies": {},
     "devDependencies": {
-        "jest": "^26.6.0",
-        "nodemon": "^3.1.9",
-        "supertest": "^6.1.6"
+        "parcel": "^2.9.3"
     },
     "author": "Larry-Craig",
     "license": "ISC"
